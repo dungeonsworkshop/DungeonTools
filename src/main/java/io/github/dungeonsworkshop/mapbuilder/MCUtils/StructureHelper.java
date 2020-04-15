@@ -1,6 +1,7 @@
 package io.github.dungeonsworkshop.mapbuilder.MCUtils;
 
 import net.morbz.minecraft.blocks.CustomBlock;
+import net.morbz.minecraft.blocks.IBlock;
 import net.morbz.minecraft.blocks.Material;
 import net.morbz.minecraft.level.FlatGenerator;
 import net.morbz.minecraft.level.GameType;
@@ -32,13 +33,14 @@ public class StructureHelper {
         for(int y = 0; y < ySize; y++){
             for(int z = 0; z < zSize; z++){
                 for(int x = 0; x < xSize; x++){
-                    if(x == 47 && y == 94 && z == 72) System.out.println(tileBlocks.get(it));
-                    //47 94 72
+                    if(x == 59 && y == 96 && z == 14) System.out.println(tileBlocks.get(it));
 
-                    int ID = tileBlocks.get(it);
+                    int ID = BlockMapper.toJavaIDFromBedrockID(tileBlocks.get(it));
                     int state = blockData.get(it);
 
-                    world.setBlock(x, y, z, new CustomBlock(BlockMapper.toJavaIDFromBedrockID(ID), state, 0));
+                    IBlock block = new CustomBlock(BlockMapper.toJavaIDFromBedrockID(ID), state, 0);
+
+                    world.setBlock(x, y, z, block);
                     it++;
                 }
             }
