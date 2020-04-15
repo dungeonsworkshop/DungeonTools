@@ -43,7 +43,7 @@ public class StructureHelper {
 
                     if(ID == 33 && state == 0) block = new CustomBlock(208, 0, 0); // Change Piston State 0 to Grass Path
                     if(ID == 33 && state == 1) block = new CustomBlock(182, 0, 0); // Change Piston State 1 to red Sandstone Slab bottom
-                    if(ID == 1 && state > 6) block = new CustomBlock(168, state - 7, 0);
+                    if(ID == 1 && state > 6) block = new CustomBlock(35, state - 7, 0);
 
                     world.setBlock(x, y, z, block);
                     it++;
