@@ -25,7 +25,7 @@ public class StructureHelper {
         level.setGameType(GameType.CREATIVE);
         level.setAllowCommands(true);
         level.setMapFeatures(false);
-        level.setSpawnPoint(0,0,0);
+        level.setSpawnPoint(76, 94, 50);
 
         World world = new World(level, layers);
 
@@ -33,6 +33,9 @@ public class StructureHelper {
         for(int y = 0; y < ySize; y++){
             for(int z = 0; z < zSize; z++){
                 for(int x = 0; x < xSize; x++){
+//                    if(x == 192 && y == 3 && z == 74) System.out.println(tileBlocks.get(it));
+//                    //192 3 74
+
                     int ID = BlockMapper.toJavaIDFromBedrockID(tileBlocks.get(it));
                     int state = blockData.get(it);
 

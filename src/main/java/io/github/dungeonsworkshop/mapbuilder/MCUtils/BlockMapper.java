@@ -27,6 +27,7 @@ public class BlockMapper {
             for(int i = 0; i < 255; i++)
                 BEDROCK_ID_MAP.put(i, properties.getProperty(Integer.toString(i)));
 
+            BEDROCK_ID_MAP.put(-73, properties.getProperty(Integer.toString(-73)));
             BEDROCK_ID_MAP.put(-28, properties.getProperty(Integer.toString(-28)));
             BEDROCK_ID_MAP.put(-30, properties.getProperty(Integer.toString(-30)));
             BEDROCK_ID_MAP.put(-32, properties.getProperty(Integer.toString(-32)));
@@ -41,6 +42,9 @@ public class BlockMapper {
             BEDROCK_ID_MAP.put(-122, properties.getProperty(Integer.toString(-122)));
             BEDROCK_ID_MAP.put(-101, properties.getProperty(Integer.toString(-101)));
             BEDROCK_ID_MAP.put(-119, properties.getProperty(Integer.toString(-119)));
+            BEDROCK_ID_MAP.put(-95, properties.getProperty(Integer.toString(-95)));
+            BEDROCK_ID_MAP.put(-27, properties.getProperty(Integer.toString(-27)));
+            BEDROCK_ID_MAP.put(-86, properties.getProperty(Integer.toString(-86)));
 
         }catch (IOException e){ e.printStackTrace(); }
 
