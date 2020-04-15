@@ -1,7 +1,6 @@
 package io.github.dungeonsworkshop.mapbuilder.IO;
 
 import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -12,11 +11,10 @@ import java.util.zip.Inflater;
 public class FileTypeHelper {
 
     public static String loadTileB64(){
-        try (InputStream input = new FileInputStream("run/resources/tile.properties")) {
+        try (InputStream input = FileTypeHelper.class.getResourceAsStream("/tile.properties")) {
             Properties prop = new Properties();
             prop.load(input);
-            String sValue = prop.getProperty("tile");
-            return sValue;
+            return prop.getProperty("tile");
         }catch (IOException e){
             e.printStackTrace();
         }
@@ -34,8 +32,7 @@ public class FileTypeHelper {
             outputStream.write(buffer, 0, count);
         }
         outputStream.close();
-        byte[] output = outputStream.toByteArray();
-        return output;
+        return outputStream.toByteArray();
     }
     public static byte[] decompress(byte[] data) throws IOException, DataFormatException {
         Inflater inflater = new Inflater();
@@ -47,8 +44,6 @@ public class FileTypeHelper {
             outputStream.write(buffer, 0, count);
         }
         outputStream.close();
-        byte[] output = outputStream.toByteArray();
-        return output;
+        return outputStream.toByteArray();
     }
-
 }
