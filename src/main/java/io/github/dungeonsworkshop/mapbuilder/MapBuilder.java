@@ -15,7 +15,9 @@ public class MapBuilder
 {
 
     public static final int STATE_MASK = 0xF;
-    public static final int X = 9, Y = 5, Z = 10;
+
+    //260, 109, 148
+    public static final int X = 260, Y = 109, Z = 148;
 
     public static void main(String[] args) throws IOException, DataFormatException
     {
@@ -35,11 +37,8 @@ public class MapBuilder
         {
             byte states = decompressed[(X * Y * Z) + i];
 
-            int stateOne = (states >> 4) & STATE_MASK;
-            int stateTwo = states & STATE_MASK;
-
-            tileData.add(stateOne);
-            tileData.add(stateTwo);
+            tileData.add((states >> 4) & STATE_MASK);
+            tileData.add(states & STATE_MASK);
         }
 
         int it = 0;
@@ -60,7 +59,8 @@ public class MapBuilder
             else
             {
                 test.append(b);
-                test.append(" ".repeat(Math.max(0, 4 - (b + "").length())));
+                for(int i = 0; i < 4 - Byte.toString(b).length(); i++)
+                    test.append(" ");
             }
             if (xIT == X)
             {
@@ -82,15 +82,7 @@ public class MapBuilder
 
         File file = world.save();
 
-
-        //        System.out.println(Arrays.toString(tileBlocks.toArray()));
-        //        System.out.println("");
-        //        System.out.println(Arrays.toString(tileData));
-        //        System.out.println("");
-        //        System.out.println(Arrays.toString(decompressed));
-
-
-        System.out.println(test);
+        //System.out.println(test);
 
     }
 }
