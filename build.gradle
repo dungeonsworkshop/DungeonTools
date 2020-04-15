@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+group 'io.github.dungeonsworkshop'
+version '1.0.0'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+
+    implementation group: 'commons-io', name: 'commons-io', version: '2.6'
+    implementation group: 'commons-codec', name: 'commons-codec', version: '1.14'
+}
