@@ -33,16 +33,13 @@ public class StructureHelper {
         for(int y = 0; y < ySize; y++){
             for(int z = 0; z < zSize; z++){
                 for(int x = 0; x < xSize; x++){
-                    //86 94 55
-                    if(x == 86 && y == 94 && z == 55) System.out.println(tileBlocks.get(it));
-
                     int ID = BlockMapper.toJavaIDFromBedrockID(tileBlocks.get(it));
                     int state = blockData.get(it);
 
                     IBlock block = new CustomBlock(ID, state, 0);
 
                     if(ID == 33 && state == 0) block = new CustomBlock(208, 0, 0); // Change Piston State 0 to Grass Path
-                    if(ID == 33 && state == 1) block = new CustomBlock(179, 1, 0); // Change Piston State 1 to red Sandstone Slab bottom
+                    if(ID == 33 && state == 1) block = new CustomBlock(182, 0, 0); // Change Piston State 1 to red Sandstone Slab bottom
                     if(ID == 1 && state > 6) block = new CustomBlock(168, state - 7, 0);
 
                     world.setBlock(x, y, z, block);

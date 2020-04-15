@@ -31,6 +31,7 @@ public class BlockMapper {
             BEDROCK_ID_MAP.put(-30, properties.getProperty(Integer.toString(-30)));
             BEDROCK_ID_MAP.put(-32, properties.getProperty(Integer.toString(-32)));
             BEDROCK_ID_MAP.put(-81, properties.getProperty(Integer.toString(-81)));
+            BEDROCK_ID_MAP.put(-92, properties.getProperty(Integer.toString(-92)));
             BEDROCK_ID_MAP.put(-94, properties.getProperty(Integer.toString(-94)));
             BEDROCK_ID_MAP.put(-98, properties.getProperty(Integer.toString(-98)));
             BEDROCK_ID_MAP.put(-13, properties.getProperty(Integer.toString(-13)));
