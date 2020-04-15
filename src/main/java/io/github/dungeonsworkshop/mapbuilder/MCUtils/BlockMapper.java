@@ -16,7 +16,7 @@ public class BlockMapper {
     private static final BiMap<Integer, String> JAVA_ID_MAP = HashBiMap.create();
     private static final BiMap<Integer, String> BEDROCK_ID_MAP = HashBiMap.create();
 
-    private static final ImmutablePair<Integer, String> STONE = new ImmutablePair(19, "minecraft:sponge");
+    private static final ImmutablePair<Integer, String> STONE = new ImmutablePair<>(19, "minecraft:sponge");
 
     static{
         //Bedrock Map Setup
