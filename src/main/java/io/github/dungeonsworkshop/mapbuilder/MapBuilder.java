@@ -16,8 +16,8 @@ public class MapBuilder
 
     public static final int STATE_MASK = 0xF;
 
-    //260, 109, 148
-    public static final int X = 260, Y = 109, Z = 148;
+    //8, 4, 9
+    public static final int X = 8, Y = 4, Z = 9;
 
     public static void main(String[] args) throws IOException, DataFormatException
     {
