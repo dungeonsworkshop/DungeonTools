@@ -71,4 +71,15 @@ public class BlockMapper {
         return BEDROCK_ID_MAP.inverse().getOrDefault(jNameSpace, 19);
     }
 
+    public static int convertWoodJava(int ID, int state){
+        int newID = 0;
+
+        if(ID == 17){
+            if(state == 0) return 17;
+            if(state == 1) return 1;
+        }
+
+        return ID;
+    }
+
 }

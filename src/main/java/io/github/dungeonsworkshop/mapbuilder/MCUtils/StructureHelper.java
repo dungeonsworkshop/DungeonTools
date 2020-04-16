@@ -3,6 +3,7 @@ package io.github.dungeonsworkshop.mapbuilder.MCUtils;
 import net.morbz.minecraft.blocks.CustomBlock;
 import net.morbz.minecraft.blocks.IBlock;
 import net.morbz.minecraft.blocks.Material;
+import net.morbz.minecraft.blocks.states.WoodState;
 import net.morbz.minecraft.level.FlatGenerator;
 import net.morbz.minecraft.level.GameType;
 import net.morbz.minecraft.level.IGenerator;
@@ -33,8 +34,7 @@ public class StructureHelper {
         for(int y = 0; y < ySize; y++){
             for(int z = 0; z < zSize; z++){
                 for(int x = 0; x < xSize; x++){
-//                    if(x == 192 && y == 3 && z == 74) System.out.println(tileBlocks.get(it));
-//                    //192 3 74
+//                    //52 93 69
 
                     int ID = BlockMapper.toJavaIDFromBedrockID(tileBlocks.get(it));
                     int state = blockData.get(it);
@@ -43,7 +43,12 @@ public class StructureHelper {
 
                     if(ID == 33 && state == 0) block = new CustomBlock(208, 0, 0); // Change Piston State 0 to Grass Path
                     if(ID == 33 && state == 1) block = new CustomBlock(182, 0, 0); // Change Piston State 1 to red Sandstone Slab bottom
+                    if(ID == 110) block = new CustomBlock(3, 1, 0);
                     if(ID == 1 && state > 6) block = new CustomBlock(35, state - 7, 0);
+                    //if(ID == 17) block = new CustomBlock(162, 1, 1);
+
+                    //52 93 69
+                    if(x == 50 && y == 93 && z == 81) System.out.println(tileBlocks.get(it));
 
                     world.setBlock(x, y, z, block);
                     it++;
